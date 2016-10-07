@@ -44,8 +44,8 @@ $("#shirtform").validate({
     form.submit();
     Materialize.toast("Thanks you! Your order was sent!", 4000, 'green');
     setTimeout(function(){
-      form.empty();
-    }, 1000);
+      $('#shirtform')[0].reset();
+    }, 100);
   },
   errorElement : 'span',
   errorPlacement: function (error, element) {
