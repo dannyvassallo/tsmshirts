@@ -52,3 +52,21 @@ $("#shirtform").validate({
     error.insertAfter($(element).next());
   }
 });
+
+// Fix inputs
+$('input').focus(function(){
+  if(this.type != 'checkbox'){
+    var query = this.id;
+    $("label[for='"+query+"']").addClass('active');
+  }
+}).blur(function(){
+  if($(this).val() != ''){
+    // do nothing
+  } else if(this.type != 'checkbox'){
+    var query = this.id;
+    $("label[for='"+query+"']").removeClass('active');
+  } else {
+    var query = this.id;
+    $("label[for='"+query+"']").removeClass('active');
+  }
+});
